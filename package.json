@@ -1,0 +1,66 @@
+{
+  "name": "next-koa-graphql",
+  "version": "1.0.0",
+  "repository": "git@github.com:jpntex/next-koa-graphql.git",
+  "author": "João Teixeira",
+  "license": "MIT",
+  "main": "src/server/index.js",
+  "scripts": {
+    "dev": "nodemon -r dotenv/config src/server dotenv_config_path=.env.dev",
+    "start": "node -r dotenv/config src/server",
+    "build": "cd src/client && next build",
+    "next": "cd src/client && next",
+    "lint": "eslint --ext .js,.jsx --ignore-path .gitignore .",
+    "precommit": "npm run lint",
+    "npm-audit": "npm i --package-lock-only && npm audit",
+    "db": "npx sequelize",
+    "db:migrate": "npx sequelize db:migrate"
+  },
+  "dependencies": {
+    "apollo-cache-inmemory": "^1.3.12",
+    "apollo-client": "^2.4.8",
+    "apollo-link-context": "^1.0.12",
+    "apollo-link-http": "^1.5.9",
+    "apollo-server-koa": "^2.3.1",
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.3",
+    "dateformat": "^3.0.3",
+    "dotenv": "^6.2.0",
+    "graphql": "^14.0.2",
+    "graphql-tag": "^2.10.1",
+    "isomorphic-unfetch": "^3.0.0",
+    "jsonwebtoken": "^8.4.0",
+    "koa": "^2.6.2",
+    "koa-compress": "^3.0.0",
+    "koa-connect": "^2.0.1",
+    "koa-helmet": "^4.0.0",
+    "koa-morgan": "^1.0.1",
+    "koa-router": "^7.4.0",
+    "next": "^7.0.2",
+    "pg": "^7.7.1",
+    "pg-hstore": "^2.3.2",
+    "react": "^16.6.3",
+    "react-apollo": "^2.3.3",
+    "react-dom": "^16.6.3",
+    "react-redux": "^6.0.0",
+    "redux": "^4.0.1",
+    "redux-devtools-extension": "^2.13.7",
+    "redux-thunk": "^2.3.0",
+    "sequelize": "^4.42.0",
+    "sequelize-cli": "^5.4.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.10.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "nodemon": "^1.18.9"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "src/server"
+    ],
+    "delay": "500"
+  }
+}
